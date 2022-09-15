@@ -1,11 +1,9 @@
-// const http = require("http");
- 
-// let message = "Hello World111!";
-// http.createServer(function(request,response){
-     
-//     console.log(message);
-//     response.end(message);
-     
-// }).listen(3000, "127.0.0.1",()=>{
-//     console.log("Сервер начал прослушивание запросов");
-// });
+const http = require("http");
+
+const PORT = process.env.PORT || 5000
+
+const server = http.createServer((req,res) => {
+    res.end('Сервер работает') 
+})
+
+server.listen(PORT, () => console.log('Сервер был запущен на порте: ' + PORT ))
