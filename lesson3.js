@@ -119,3 +119,11 @@ fsPromise.rmdir('/').then().catch()
 //---------------------Подсказки
 // const text = process.env.TEXT || ' '
 // data => data.split(' ').length
+
+//-----------
+
+// import { fileURLToPath } from 'url';
+// import { dirname } from 'path';
+
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__filename);
