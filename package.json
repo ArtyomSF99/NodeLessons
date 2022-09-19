@@ -4,12 +4,12 @@
   "description": "",
   "main": "lesson1.js",
   "scripts": {
-    "start": "cross-env PORT=5000 node lesson1.js"
+    "start": "cross-env TEXT='sadf asdf' node lesson3.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "cross-env": "^7.0.3"
   }
 }
