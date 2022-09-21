@@ -95,6 +95,11 @@ writeFileAsync(path.resolve(__dirname, 'text10.txt' ), text)
     .then(count => writeFileAsync(path.resolve(__dirname, "count.txt"), `кол-во слов ${count}`))
     .then(() => removeFileAsync(path.resolve(__dirname, 'text10.txt')))
 
+    //решение проблем
+    // rm -rf node_modules
+    // rm package-lock.json yarn.lock
+    // npm cache clear --force
+
 // writeFileAsync(path.resolve(__dirname, 'text.txt' ), 'data')
 //     .then(() => appendFileAsync(path.resolve(__dirname, 'text.txt'),'123'))
 //     .then(() => appendFileAsync(path.resolve(__dirname, 'text.txt'),'456'))

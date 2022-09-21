@@ -1,29 +1,52 @@
+//Router/Маршруты
+
+// const express = require("express");
+// const app = express();
+ 
+// app.use("/about", function (request, response) {
+//   response.send("О сайте");
+// });
+ 
+// app.use("/products/create",function (request, response) {
+//   response.send("Добавление товара");
+// });
+// app.use("/products/:id",function (request, response) {
+//   response.send(`Товар ${request.params.id}`);
+// });
+// app.use("/products/",function (request, response) {
+//   response.send("Список товаров");
+// });
+ 
+// app.use("/", function (request, response) {
+//   response.send("Главная страница");
+// });
+// app.listen(3000);
+
+//------Реализация с Router
 const express = require("express");
-   
 const app = express();
-   
-// создаем парсер для данных application/x-www-form-urlencoded
-const urlencodedParser = express.urlencoded({extended: false});
-  
-app.get("/", function (request, response) {
-    response.sendFile(__dirname + "/index1.html");
+ 
+// определяем Router
+const productRouter = express.Router();
+ 
+// определяем маршруты и их обработчики внутри роутера
+productRouter.use("/create", function(request, response){
+  response.send("Добавление товара");
 });
-app.post("/", urlencodedParser, function (request, response) {
-    if(!request.body) return response.sendStatus(400);
-    console.log(request.body);
-    response.send(`${request.body.userName} - ${request.body.userAge}`);
+productRouter.use("/:id", function(request, response){
+  response.send(`Товар ${request.params.id}`);
 });
-
-//--------Параметры маршрута
-app.get("/products/:productId", function (request, response) {
-    response.send("productId: " + request.params["productId"])
-  });
-
-//более сложные конструкции 
-app.get("/categories/:categoryId/products/:productId", function (request, response) {
-    let catId = request.params["categoryId"];
-    let prodId = request.params["productId"];
-    response.send(`Категория: ${catId}  Товар: ${prodId}`);
+productRouter.use("/", function(request, response){
+  response.send("Список товаров");
 });
-   
-app.listen(3000, ()=>console.log("Сервер запущен..."));
+// сопотавляем роутер с конечной точкой "/products"
+app.use("/products", productRouter);
+ 
+app.use("/about", function (request, response) {
+  response.send("О сайте");
+});
+ 
+app.use("/", function (request, response) {
+  response.send("Главная страница");
+});
+app.listen(3002);

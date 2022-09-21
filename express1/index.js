@@ -104,4 +104,4 @@ app.listen(3000);
 // /home/foo/bar ----> /home/foo/about
 // app.use("/home/foo/bar",function (request, response) {
 //     response.redirect("./about")
-//   });
+// });

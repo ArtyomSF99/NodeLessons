@@ -4,12 +4,17 @@
   "description": "",
   "main": "lesson1.js",
   "scripts": {
-    "start": "cross-env TEXT='sadf asdf' node lesson3.js"
+    "start": "cross-env TEXT='sadf' node lesson3.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtyomSF99/NodeLessons.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "cross-env": "^7.0.3"
-  }
+  "bugs": {
+    "url": "https://github.com/ArtyomSF99/NodeLessons/issues"
+  },
+  "homepage": "https://github.com/ArtyomSF99/NodeLessons#readme"
 }
